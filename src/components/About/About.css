@@ -1,0 +1,111 @@
+.contactContainer{
+    width: 100%;
+    height: 100%;
+    margin: 0 0;
+    display: flex;
+    flex-direction: column;
+    background-color:#434D56 ;
+    padding-top:5%;
+    }
+    
+    .contactNav{
+        height: 80px;
+        display: flex;
+        padding: 0 100px;
+        margin-top: 30px;
+        justify-content: space-between;
+        align-items: center;
+    }
+    @media screen and (max-width:500px){
+        .contactNav{
+            padding:0 30px;
+        }
+    }
+    .contactH{
+        margin-left: 24px;
+        font-size: 3rem;
+        font-weight: 400;
+        color: #01BF71;
+    }
+    .contactNavBtn{
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        font-size: 2rem;
+        color: #01BF71;
+        cursor: pointer;
+    }
+
+    .contactContent{
+        font-size: 14px;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        color: aliceblue;
+    }
+.form{
+    display: flex;
+    flex-direction: column;
+    padding: 370px 100px;
+}
+.input-group{
+    margin:24px 0px;
+}
+.bikeLogo{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+@media screen and (max-width:1000px){
+    .contactContent{
+        display: flex;
+        flex-direction: column;
+        
+    }
+    .bikeLogo{
+        margin:50px 0;
+    }
+}
+
+.contactBtn{
+border-radius:50px;
+background-color: #01BF71;
+white-space: nowrap;
+padding: 12px 30px;
+color: #000; 
+font-size: 16px;
+ outline:none;
+ border:none;
+cursor:pointer;
+display:flex;
+justify-content:center;
+align-items:center;
+transition:all 0.2s ease-in-out;
+margin:30px 170px;
+text-align:center; 
+}
+
+.contactBtn:hover {
+    transition:all 0.2s ease-in-out;
+    background-color:  #fff;
+    color: #000;
+}
+@media screen and (max-width:768px){
+    .contactBtn{
+        margin:30px 150px;
+    }
+}
+@media screen and (max-width:468px){
+    .contactBtn{
+        margin:30px 70px;
+    }
+}
+
+@media screen and (max-width:280px){
+    .contactBtn{
+        margin:30px 40px;
+    }
+}
+   
+    

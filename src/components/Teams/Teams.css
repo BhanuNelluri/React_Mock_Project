@@ -1,0 +1,125 @@
+.projectContainer{
+    width: 100%;
+    margin: 0 0;
+    display: flex;
+    flex-direction: column;
+    background-color:#DDDDDD ;
+    padding-top: 5%;
+    }
+    
+    .projectNav{
+        height: 80px;
+        display: flex;
+        padding: 0 100px;
+        margin-top: 30px;
+        justify-content: space-between;
+        align-items: center;
+    }
+    @media screen and (max-width:500px){
+        .projectNav{
+            padding:0 30px;
+        }
+    }
+    .projectH{
+        margin-left: 24px;
+        font-size: 3rem;
+        font-weight: 400;
+        color: #01BF71;
+    }
+    .projectNavBtn{
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        font-size: 2rem;
+        color: #01BF71;
+        cursor: pointer;
+    }
+    .projectsModule{
+        width: 90%;
+        margin:50px auto;
+        display: flex;
+        flex-direction: column;
+    }
+    .project1{
+        width:90%;
+        margin:30px auto;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+    .projectInfo{
+        padding:50px;
+    }
+    .projectFooter{
+        height:120px;
+        width:70%;
+        display: flex;
+        justify-content:flex-end;
+        align-items: center;
+        border-bottom: 1px solid grey;
+        margin: 0 auto;
+    }
+    .visit,.github{
+        margin: 0 20px;
+        padding:10px 10px;
+        border-top:2px solid #01BF71;
+        border-bottom: 2px solid #01BF71;
+        text-decoration: none;
+        color: #000;
+    }
+    .visit:hover,.github:hover{
+        border-left:2px solid #01BF71;
+        border-right: 2px solid #01BF71;
+        border-top:none;
+        border-bottom:none;
+        text-shadow:1px 0px grey;
+    }
+    
+    .projectFooter1{
+        height:120px;
+        width:70%;
+        display: flex;
+        justify-content:flex-end;
+        align-items: center;
+        margin: 0 auto;
+    }
+    .InfoHeader{
+        margin:10px 0 ;
+        font-weight:600;
+        font-size:1.5rem;
+    }
+    .projectImage{
+        margin: auto auto;
+    }
+    .image{
+        position: relative;
+        width:100%;
+        margin: auto auto;
+    }
+    @media screen and (max-width:750px){
+        .project1{
+            grid-template-columns: 1fr;
+        }
+        .projectInfo{
+            padding:20px 0;
+        }
+        .projectsModule{
+            margin-top: 0px;
+        }
+        .projectImage{
+            margin: 20px auto;
+        }
+    }
+
+    @media screen and (max-width:350px){
+        img{
+            width:70%;
+        }
+    }
+
+    .stackH{
+        margin:20px 0;
+    }
+    .techlist{
+        margin:10px 40px;
+    }

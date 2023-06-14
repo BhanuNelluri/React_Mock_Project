@@ -1,0 +1,58 @@
+
+.Sidebar{
+    position: fixed;
+    right:0px;
+    height:100vh;
+    top:80px;
+    background-color: #000;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 40%;
+    z-index: 999;
+    border-left: 2px solid white;
+    animation: slide-in 0.5s ease forwards;
+}
+
+
+@keyframes slide-in {
+    from{
+transform: translateX(100%);
+    }to{
+transform: translateX(0%);
+    }   
+}
+
+.SidebarMenu{
+display: grid;
+color: #01BF71;
+grid-template-columns: 1fr;
+text-decoration: none;
+font-size: 1.7rem;
+margin-top: 50px;
+gap: 50px;
+}
+.SidebarItem{
+    display: flex;
+    cursor: pointer;
+}
+.SidebarLinks{
+    color: #01BF71;
+    display:flex;
+    align-items: center;
+    text-decoration: none;
+    padding: 0 1rem;
+    height: 100%;
+    cursor: pointer;
+    opacity: 1;
+    /* transition: 0.2s all ease-in-out; */
+}
+.SidebarLinks:active{
+    border-bottom: 3px solid #fff; 
+}
+
+@media screen and (max-width:768px) {
+    .SidebarMenu{
+        font-size: 1.2rem;
+    }
+}

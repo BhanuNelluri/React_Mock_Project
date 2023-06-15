@@ -1,10 +1,13 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect } from 'react';
 import './Header.css';
+import { useSelector } from 'react-redux';
+import UserModal from '../User/UserModal';
 
 export default function Header({ isOpen, setIsOpen }) {
     const [scrollNav, setScrollNav] = useState(false);
-
-
+    const [showUserModal, setShowUserModal] = useState(false);
+    const user = useSelector((state)=>state.Auth);
+    
 
     const changeNav = () => {
         if (window.scrollY >= 80) {
@@ -72,6 +75,34 @@ export default function Header({ isOpen, setIsOpen }) {
                             offset={-80}
                         >About</a>
                     </div>
+                    <div className="NavItem">
+                        <a className="NavLinks" href='/employee'
+                            smooth={true}
+                            duration={500}
+                            spy={true}
+                            exact="true"
+                            offset={-80}
+                        >Employees</a>
+                    </div>
+                    <div className="NavItem">
+                    {user.name==""?
+                    <a className="NavLinks" href='/signin'
+                            smooth={true}
+                            duration={500}
+                            spy={true}
+                            exact="true"
+                            offset={-80}
+                        >SignIn</a>  :  
+                        <a className="NavLinks" onClick={() => setShowUserModal(true)}
+                        smooth={true}
+                        duration={500}
+                        spy={true}
+                        exact="true"
+                        offset={-80}
+                    >{user.name}</a>  }
+                     {showUserModal && <UserModal setShowUserModal={setShowUserModal} />}
+                    </div>
+                   
 
                 </div>
             </div>

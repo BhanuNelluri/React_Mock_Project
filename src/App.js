@@ -1,4 +1,4 @@
-import React,{useState} from 'react';
+import React,{useState,useEffect} from 'react';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import './App.css';
 import Header from './components/Header/Header.js';
@@ -8,6 +8,11 @@ import Home from './components/Home/Home.js';
 import Sidebar from './components/Sidebar/Sidebar';
 import Introduction from './components/Introduction/Introduction';
 import Team from './components/Teams/Team/Team';
+import Auth from './components/Auth/Auth';
+import {Provider} from 'react-redux';
+import reducers from './reducers/index';
+import {applyMiddleware, compose, createStore} from 'redux';
+import thunk from 'redux-thunk';
 
 const frontend_employees = [
   {
@@ -109,7 +114,9 @@ const devops_employees = [
 
 function App() {
   const [isOpen, setIsOpen] = useState(false);
+  const store = createStore(reducers,compose(applyMiddleware(thunk)));
   return (
+    <Provider store = {store}>
           <div className="home">
             <BrowserRouter>
                 <Header isOpen={isOpen} setIsOpen={setIsOpen} />
@@ -117,9 +124,11 @@ function App() {
                 <div className="HomeContainer">
                 <Routes>
                   <Route path='/' exact element={<Home/>} />
+                  <Route path='/signin' exact element={<Auth/>} />
                   <Route path='/introduction' exact element={<Introduction/>} />
                   <Route path='/teams' exact element={<Teams/>} />
                   <Route path='/about' exact element={<About/>} />
+                  {/* <Route path='/employee' exact element={<Team />} /> */}
                   <Route path='/frontend' exact element={<Team employees={frontend_employees}/>} />
                   <Route path='/backend' exact element={<Team employees={backend_employees}/>} />
                   <Route path='/devops' exact element={<Team employees={devops_employees}/>} />
@@ -127,6 +136,7 @@ function App() {
                 </div>
             </BrowserRouter>
             </div>
+            </Provider>
   );
 }
 
